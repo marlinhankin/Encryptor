@@ -83,41 +83,6 @@ class Encrypto:
         else:
             print("\nNo Problem! Let's do this again someday!")
 
-
-    #A basic password evaluator to check the password strength
-    def Evaluator(self):
-
-        passw=self.password
-
-        if len(passw) <= 6:
-            print('The password must be between 6 and 12 characters.\n')
-            return 1
-
-        else:
-            password_scores = {0: 'Horrible', 1: 'Weak', 2: 'Medium', 3: 'Strong'}
-
-            password_strength = dict.fromkeys(['has_upper', 'has_lower', 'has_num'], False)
-            if re.search(r'[A-Z]', passw):
-                password_strength['has_upper'] = True
-            if re.search(r'[a-z]', passw):
-                password_strength['has_lower'] = True
-            if re.search(r'[0-9]', passw):
-                password_strength['has_num'] = True
-
-            score = len([b for b in password_strength.values() if b])
-
-            if (password_scores[score] == "Weak"):
-                print(
-                    "\nYour password score is: Weak!\nHere's what you should try-\n1) Ensure that your password contains atleast one capital letter.\n2) Use numbers 0-9 in your password to make it stronger! \n3) Use symbols where possible to make it even more credible\n")
-
-            elif (password_scores[score] == "Medium"):
-                print(
-                    "\nYour password score is: Good Enough!\nYou already have a decent password score, try the following to get even better rating!-\n1) Ensure that your password contains atleast one capital letter.\n2) Use numbers 0-9 in your password to make it stronger! \n3) Use symbols where possible to make it even more credible\n")
-
-            else:
-                print(
-                    "\nYour password score is: Awesome!\nThis password activates god mode! Congrats you are protected!\nDon't forget to change your password regularly to prevent any hacks!\n")
-
     #Encryption using AES OAEP
     def encrypt(self):
         # the chunksize is basically the amount of data being read at a time
@@ -198,17 +163,15 @@ if __name__== "__main__":
     print("\nGreat Job! Now that we have our setup successfully initialised, what would you like to do?")
     while True:
         choice = input(
-            "\n1) Get the current password appraised.\n2) Encrypt your current Username and Password File.\n3) Decrypt an existing file (Secret key needed)\n4) Generate a new RSA key pair. \n5) Quit for now.\n(Enter your choices as 1-5)\n")
+            "\n1) Encrypt your current Username and Password File.\n2) Decrypt an existing file (Secret key needed)\n3) Generate a new RSA key pair. \n4) Quit for now.\n(Enter your choices as 1-4)\n")
 
         if(choice=="1"):
-            e.Evaluator()
-        elif(choice=="2"):
             e.encrypt()
-        elif(choice=="3"):
+        elif(choice=="2"):
             e.decrypt()
-        elif(choice=="4"):
+        elif(choice=="3"):
             e.RSA_gen()
-        elif(choice=="5"):
+        elif(choice=="4"):
             print("\nThank you for using the Encryptor by AINC! Hope to see you soon!")
             exit(1)
         else:
