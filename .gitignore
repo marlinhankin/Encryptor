@@ -1,0 +1,6 @@
+Pipfile
+Pipfile.lock
+.venv/
+__pycache__/
+*.bin
+*.pem
