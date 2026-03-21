@@ -1,7 +1,7 @@
 # Encryptor
-A password encryptor package for  Linux
+A password encryptor package for Linux written in Python.
+Credit for project goes to ScorchingShade.
 
->Complete revamp coming soon!
 >This is a powerful software to be used only at user's risk.
 >RSA and AES encrytion techniques ensure that your data is secure and safe. 
 >A menu driven program to easily begin using The Encryptor.
@@ -9,6 +9,7 @@ A password encryptor package for  Linux
 >The method ensures that while sending any credentials to authorised users, only they have the access to it.
 >Adding such methods allows you to provide true end to end encryption, without revealing any sensitive info.
 >Some features are explained below
+>DISCLOSURE: This is not a substitute for a fully vetted program such as veracrypt. USE AT YOUR OWN RISK AND DISCRETION. THIS COMES WITH ABSOLUTELY NO WARRANTY!!!!
 #### Commands to run on Terminal
 Use the following commands on Linux to run the Program
 ```sh
@@ -20,6 +21,7 @@ $ python3 Source.py
 
   - Optimal asymmetric encryption padding used for sturdier encryption.
   - 'Nonce' to ensure AES encryption.
+  - Does not leave any trace of the file on the disk unencrypted as that is NOT SECURE. All operations are done in RAM to prevent Disk Leak.
   
 
 ## Dependencies
@@ -27,7 +29,4 @@ You must have Python 3.x and Pycryptodome installed. In addition to this, severa
 ```sh
  pip install pycryptodome 
  ```
- 
- Leave a star and check out more amazing codes by Ankush Sharma
-
-Reach out to me at ankushors789@gmail.com
+Modifications by Marlin H.
